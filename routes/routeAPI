@@ -1,0 +1,22 @@
+//routeApi.js
+const express = require("express");
+const {
+  getAllRecipes,
+  getRecipeById,
+  createRecipe,
+  updateRecipe,
+  deleteRecipe,
+  getRecipeStats,
+} = require("../controller/recipesController");
+
+const { validateRecipeMiddleware } = require("../middlewares/recipeValidation");
+
+const router = express.Router();
+router.get("/recipes", getAllRecipes);
+router.get("/recipes/stats", getRecipeStats);
+router.get("/recipes/:id", getRecipeById);
+router.post("/recipes", validateRecipeMiddleware, createRecipe);
+router.put("/recipes/:id", validateRecipeMiddleware, updateRecipe);
+router.delete("/recipes/:id", deleteRecipe);
+
+module.exports = router;
