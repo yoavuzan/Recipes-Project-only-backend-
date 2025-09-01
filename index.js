@@ -1,10 +1,12 @@
 const express = require("express");
-const { logger } = require("./middlewares/logger.js");
+const morgan = require("morgan");
 const PORT = process.env.PORT || 3000;
 const app = express();
 const router = require("./routes/routeAPI");
 
-app.use(logger);
+// Morgan middleware for logging
+app.use(morgan("dev"));
+
 app.use(express.json());
 
 app.use("/api", router);

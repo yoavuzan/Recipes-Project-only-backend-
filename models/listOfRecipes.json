@@ -3,7 +3,13 @@
     "id": "1",
     "title": "Spaghetti Carbonara",
     "description": "Classic Italian pasta with eggs, cheese, pancetta, and pepper.",
-    "ingredients": ["spaghetti", "eggs", "pancetta", "parmesan cheese", "black pepper"],
+    "ingredients": [
+      "spaghetti",
+      "eggs",
+      "pancetta",
+      "parmesan cheese",
+      "black pepper"
+    ],
     "instructions": [
       "Cook spaghetti until al dente.",
       "Fry pancetta until crispy.",
@@ -18,28 +24,19 @@
     "createdAt": "2025-01-02T12:00:00.000Z"
   },
   {
-    "id": "2",
-    "title": "Chicken Curry",
-    "description": "A flavorful curry with tender chicken and aromatic spices.",
-    "ingredients": ["chicken", "onion", "garlic", "ginger", "tomato", "spices", "coconut milk"],
-    "instructions": [
-      "Sauté onion, garlic, and ginger.",
-      "Add chicken and cook until browned.",
-      "Add spices and tomatoes.",
-      "Pour in coconut milk and simmer until chicken is tender.",
-      "Serve with rice."
-    ],
-    "cookingTime": 45,
-    "servings": 4,
-    "difficulty": "medium",
-    "rating": 4.8,
-    "createdAt": "2025-01-05T09:30:00.000Z"
-  },
-  {
     "id": "3",
     "title": "Chocolate Chip Cookies",
     "description": "Crispy on the edges, chewy in the middle – the perfect cookie.",
-    "ingredients": ["butter", "sugar", "brown sugar", "eggs", "flour", "baking soda", "salt", "chocolate chips"],
+    "ingredients": [
+      "butter",
+      "sugar",
+      "brown sugar",
+      "eggs",
+      "flour",
+      "baking soda",
+      "salt",
+      "chocolate chips"
+    ],
     "instructions": [
       "Preheat oven to 180°C (350°F).",
       "Cream butter and sugars together.",
