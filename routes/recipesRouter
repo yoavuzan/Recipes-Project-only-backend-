@@ -12,11 +12,19 @@ const {
 const { validateRecipeMiddleware } = require("../middlewares/recipeValidation");
 
 const router = express.Router();
+//GET
 router.get("/recipes", getAllRecipes);
 router.get("/recipes/stats", getRecipeStats);
 router.get("/recipes/:id", getRecipeById);
-router.post("/recipes", validateRecipeMiddleware, createRecipe);
-router.put("/recipes/:id", validateRecipeMiddleware, updateRecipe);
-router.delete("/recipes/:id", deleteRecipe);
 
+//POST
+router.post("/recipes", validateRecipeMiddleware, createRecipe);
+
+
+//PUT
+router.put("/recipes/:id", validateRecipeMiddleware, updateRecipe);
+
+//DELETE
+router.delete("/recipes/:id", deleteRecipe);
+ 
 module.exports = router;

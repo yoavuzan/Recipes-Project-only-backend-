@@ -10,6 +10,7 @@ const validateRecipe = ajv.compile(recipeSchema);
 function validateRecipeMiddleware(req, res, next) {
   const valid = validateRecipe(req.body);
   if (!valid) {
+    console.log(" Validation errors:", validateRecipe.errors);
     return res.status(400).json({ success: false, errors: validateRecipe.errors });
   }
   next();
