@@ -89,7 +89,7 @@ async function createRecipe(req, res) {
       difficulty: req.body.difficulty,
       imageUrl: req.body.imageUrl,
       isPublic: req.body.isPublic,
-      userId: req.body.userId,
+      userId: req.user.id,
       createdAt: formatDateForMySQL(new Date()),
       updatedAt: formatDateForMySQL(new Date()),
     },

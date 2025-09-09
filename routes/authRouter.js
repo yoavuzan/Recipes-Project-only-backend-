@@ -1,16 +1,16 @@
 //authRouter.js
 const express = require("express");
 const { registerUser, loginUser, getUserProfile } = require("../controller/authController");
-const { authenticateToken } = require("../middlewares/authMiddleware");
+const { authenticate } = require("../middlewares/authenticate");
 
 const router = express.Router();
 
 //GET
-router.get("/auth/profile", authenticateToken, getUserProfile);
+router.get("/profile", authenticate, getUserProfile);
 
 //POST
-router.post("/auth/register", registerUser);
-router.post("/auth/login", loginUser);
+router.post("/register", registerUser);
+router.post("/login", loginUser);
 
 
 module.exports = router;

@@ -3,6 +3,7 @@ const morgan = require("morgan");
 const PORT = process.env.PORT || 3000;
 const app = express();
 const router = require("./routes/recipesRouter");
+const apiAuthRouter = require("./routes/authRouter");
 const { test } = require("./DB/config/config");
 const { sequelize } = require("./DB/models/index.js");
 // Morgan middleware for logging
@@ -10,7 +11,12 @@ app.use(morgan("dev"));
 
 app.use(express.json());
 
+app.use("/api/auth", apiAuthRouter);
 app.use("/api", router);
+
+
+
+// Function to test DB connection
 
 async function testDBConnection() {
   try {
@@ -23,7 +29,7 @@ async function testDBConnection() {
 
 app.get("/", async (req, res) => {
   const [result, meta] = await sequelize.query("SELECT * FROM recipes");
- 
+
   res.send("Welcome to the Recipes API");
 });
 

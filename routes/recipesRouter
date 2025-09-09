@@ -10,6 +10,7 @@ const {
 } = require("../controller/recipesController");
 
 const { validateRecipeMiddleware } = require("../middlewares/recipeValidation");
+const { authenticate } = require("../middlewares/authenticate");
 
 const router = express.Router();
 //GET
@@ -17,14 +18,15 @@ router.get("/recipes", getAllRecipes);
 router.get("/recipes/stats", getRecipeStats);
 router.get("/recipes/:id", getRecipeById);
 
+
 //POST
-router.post("/recipes", validateRecipeMiddleware, createRecipe);
+router.post("/recipes", authenticate, validateRecipeMiddleware, createRecipe);
 
 
 //PUT
-router.put("/recipes/:id", validateRecipeMiddleware, updateRecipe);
+router.put("/recipes/:id", authenticate, validateRecipeMiddleware, updateRecipe);
 
 //DELETE
-router.delete("/recipes/:id", deleteRecipe);
- 
+router.delete("/recipes/:id", authenticate, deleteRecipe);
+
 module.exports = router;
